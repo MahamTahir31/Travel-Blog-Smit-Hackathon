@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Mukta:wght@200&display=swap" rel="stylesheet">
+    <title>Travel the whole world/About</title>
+</head>
+
+<body>
+
+    <!-- nav bar starts  -->
+    <nav id="navbar">
+        <div id="logo">
+            <img src="./assets/images/LogoTravelTheWorld.png" alt="Travel the world">
+        </div>
+        <ul>
+            <li class="item"><a href="index.html">Home</a></li> <!--Using Emmet: li.item{<a></a>}*4-->
+            <li class="item"><a href="#a">About us</a></li>
+            <li class="item"><a href="services.html">Services</a></li>
+            <li class="item"><a href="client.html">Our Clients</a></li>
+            <li class="item"><a href="Contact.html">Contact us</a></li>
+        </ul>
+    </nav>
+    <!-- nav bar ends  -->
+
+    <!-- about us starts  -->
+    <h1 align="center" >About Us</h1>
+    <section id="about">
+        <div class="about-container">
+            <p id="about-text">&RightArrow; We are a travel agency dedicated to helping you plan and book your dream
+                vacation. With
+                years of
+                experience in the industry, we have the knowledge and expertise to provide you with personalized
+                recommendations and exceptional service. <br>&RightArrow; Our team of travel experts is passionate about
+                exploring the world and sharing their experiences with
+                others. We believe that travel is not just about visiting new places, but also about creating meaningful
+                connections with people and cultures.
+                <br>
+                &RightArrow; Whether you're looking for a fantasy getaway, an adventure-filled trip, or a relaxing beach
+                vacation, we
+                can help you find the perfect destination and itinerary to suit your preferences and budget.
+            </p>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const images = [
+                "./assets/images/backpacker.png",
+                "./assets/images/airplane.png",
+                "./assets/images/travel.png",
+                "/assets/images/backpack.png"
+            ];
+
+            const homeFontsDiv = document.createElement("div");
+            homeFontsDiv.classList.add("home-fonts");
+
+            for (const imagePath of images) {
+                const imgDiv = document.createElement("div");
+                const img = document.createElement("img");
+                img.src = imagePath;
+                img.alt = "error occurred";
+                img.classList.add("about-img");
+                imgDiv.appendChild(img);
+                homeFontsDiv.appendChild(imgDiv);
+            }
+
+            const aboutContainer = document.querySelector(".about-container");
+            aboutContainer.parentNode.insertBefore(homeFontsDiv, aboutContainer.nextSibling);
+        });
+
+    </script>
+
+    <!-- about us ends  -->
+</body>
+
+</html>

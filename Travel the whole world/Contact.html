@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Mukta:wght@200&display=swap" rel="stylesheet">
+    <title>Travel the whole world/Contact</title>
+</head>
+
+<body>
+
+    <!-- nav bar starts  -->
+    <nav id="navbar">
+        <div id="logo">
+            <img src="./assets/images/LogoTravelTheWorld.png" alt="Travel the world">
+        </div>
+        <ul>
+            <li class="item"><a href="index.html">Home</a></li> <!--Using Emmet: li.item{<a></a>}*4-->
+            <li class="item"><a href="about.html">About us</a></li>
+            <li class="item"><a href="services.html">Services</a></li>
+            <li class="item"><a href="client.html">Our Clients</a></li>
+            <li class="item"><a href="#">Contact us</a></li>
+        </ul>
+    </nav>
+    <!-- nav bar ends  -->
+    <!-- contact starts  -->
+    <h1 class="h-primary center">Contact Us
+    </h1>
+    <section id="contact">
+        <div id="contact-box">
+            <form>
+                <div class="form-control">
+                    <input type="text" required>
+                    <label>Name:</label>
+                </div>
+
+                <div class="form-control">
+                    <input type="text" required>
+                    <label>Email:</label>
+                </div>
+                <div class="form-control">
+                    <input type="text" required>
+                    <label>Message:</label>
+                </div>
+                
+                <button class="btn">Send Request</button>
+
+            </form>
+        </div>
+    </section>
+    <!-- contact ends  -->
+    <script>
+        const labels = document.querySelectorAll('.form-control label');
+
+        labels.forEach(label => {
+            label.innerHTML = label.innerText
+                .split('')
+                .map((letter, idx) => `<span style ="transition-delay:${idx * 60}ms">${letter}</span>`)
+                .join('')
+        }) </script>
+</body>
+
+</html>

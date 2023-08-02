@@ -1,0 +1,779 @@
+/* Css Reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgba(208, 213, 216, 0.868);
+    background-size: cover;
+    height: 320px;
+    z-index: -1;
+}
+
+
+
+/* Navigation Bar */
+#navbar {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 900;
+    width: 100%;
+    height: 90px;
+    box-shadow: 0px 10px 22px rgb(184, 221, 226);
+    position: sticky;
+}
+
+#logo img {
+    height: 100px;
+    margin: 6px 21px;
+    animation: logoAnimation 4s linear;
+}
+
+@keyframes logoAnimation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+#navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+#navbar::before {
+    content: "";
+    background-color: rgb(15 175 183 / 25%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+#navbar ul li {
+    font-size: 1rem;
+    list-style: none;
+    height: 6em;
+    width: 10em;
+}
+
+#navbar ul li a {
+    display: block;
+    padding: 8px;
+    margin: 22px;
+    text-decoration: none;
+    border-radius: 24px;
+    color: azure;
+    text-align: center;
+}
+
+#navbar ul li a:hover {
+    color: black;
+    background: rgb(189, 189, 189, 40%);
+    border: 1px solid rgb(139, 132, 132);
+    border-radius: 5px;
+    border-width: 0;
+}
+
+/* Media query for tablets and larger screens */
+@media only screen and (min-width: 768px) {
+    #navbar {
+        height: 70px;
+    }
+
+    #navbar ul li {
+        height: auto;
+        width: auto;
+        margin: 0 10px;
+    }
+
+    #navbar ul li a {
+        margin: 0;
+    }
+
+    #logo img {
+        height: 60px;
+    }
+}
+
+/* Media query for mobile phones */
+@media only screen and (max-width: 480px) {
+    #navbar {
+        flex-direction: column;
+        height: auto;
+    }
+
+    #logo img {
+        height: 50px;
+    }
+
+    #navbar ul li {
+        height: auto;
+        width: auto;
+        margin: 8px;
+    }
+}
+
+/* navbar styling ends  */
+
+/* home section  */
+#home {
+    Display: flex;
+    flex-direction: column;
+    padding: 5px 50px;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+}
+
+#home::before {
+    content: "";
+    background: url("./images/BodyBackground.jpg") no-repeat center center/cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    /* Update this line */
+    width: 100%;
+    z-index: -1;
+    opacity: 0.8;
+}
+
+#home h1 {
+    color: white;
+    font-size: 2.7rem;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+#home p {
+    color: white;
+    font-size: 1.3rem;
+    font-family: 'Labrada', serif;
+    text-align: center;
+    width: 50%;
+}
+
+#home p strong {
+    color: rgb(161, 225, 142);
+
+}
+
+#home button a {
+    text-decoration: none;
+    color: azure;
+}
+
+#home button a:hover {
+    color: black;
+}
+
+/* For smaller screens and mobile phones */
+@media only screen and (max-width: 768px) {
+    #home {
+        padding: 5px 20px;
+        height: auto;
+    }
+
+    #home h1 {
+        font-size: 2rem;
+    }
+
+    #home p {
+        font-size: 1rem;
+    }
+}
+
+/* For larger screens and desktops */
+@media only screen and (min-width: 1200px) {
+    #home {
+        padding: 5px 100px;
+    }
+}
+
+/* home section ends  */
+
+/* places starts */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+
+    display: inline-block;
+    width: 300px;
+    margin: 120px 20px 20px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.card p {
+    font-size: 17px;
+    font-weight: bolder;
+    color: #4d4b4b;
+}
+
+/* Media query for smaller screens and mobile phones */
+@media only screen and (max-width: 768px) {
+    .card {
+        max-width: 100%;
+        /* Cards take full width on one line */
+    }
+}
+
+/* places ends  */
+/* About us section  */
+#about {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* To align both containers at the top */
+    flex-wrap: wrap;
+    /* To wrap the content if the screen size is too small */
+}
+
+h1 {
+    margin-top: 10px;
+}
+
+.about-container {
+    flex: 1;
+    max-width: calc(50% - 10px);
+    /* Each container takes 50% of the available space minus the margin */
+    margin-top: 60px;
+    margin-left: 20px;
+    font-size: 1.2rem;
+    line-height: 2rem;
+}
+
+.home-fonts {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    /* Wrap the images if the screen size is too small */
+    justify-content: flex-end;
+    margin-right: 80px;
+}
+
+.home-fonts div {
+    flex-basis: calc(33.33% - 10px);
+    /* Each image container takes 33.33% of the available space minus the margin */
+    margin: 5px;
+    margin-left: 6px;
+    /* Add left margin to the image container */
+    margin-top: 12px;
+    /* Add top margin to the image container */
+
+}
+
+.about-img {
+    max-width: 100%;
+    height: auto;
+    animation: pulsateAnimation 2s ease-in-out infinite;
+}
+
+@keyframes pulsateAnimation {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* For smaller screens and mobile phones */
+@media only screen and (max-width: 768px) {
+    #about {
+        flex-direction: column;
+        /* Stack the containers vertically on smaller screens */
+        align-items: center;
+        /* Center the containers */
+    }
+
+    .about-container {
+        max-width: 100%;
+        /* Each container takes full width on smaller screens */
+        margin: 20px;
+        /* Add margin to the containers to separate them */
+    }
+
+    .home-fonts {
+        justify-content: center;
+        /* Center the images */
+        margin-right: 0;
+        /* Remove right margin */
+    }
+
+    .home-fonts div {
+        flex-basis: calc(50% - 10px);
+        /* Each image container takes 50% of the available space minus the margin */
+        margin: 5px;
+        margin-top: 12px;
+    }
+}
+
+/* about us ends  */
+
+/* Services section  */
+#services {
+    display: flex;
+    margin: 24px;
+}
+
+#services .box {
+    border: 2px solid brown;
+    padding: 10px;
+    margin: 3px 6px;
+    border-radius: 28px;
+    background-color: rgb(128, 125, 125);
+    box-shadow: 8px 10px 8px #888888;
+    transition: transform 0.3s ease-in-out;
+
+}
+.box:hover {
+    transform: scale(1.05);
+}
+
+#services .box img {
+    height: 138px;
+    display: block;
+    margin: auto;
+    opacity: 0; /* Start with 0 opacity */
+    animation: fadeInAnimation 1s ease-in-out forwards;
+}
+
+@keyframes fadeInAnimation {
+    to {
+        opacity: 1; /* Fade the image in to full opacity */
+    }
+}
+
+#services .box p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+}
+
+/* Media query for smaller screens and mobile phones */
+@media only screen and (max-width: 768px) {
+    #services {
+        flex-direction: column; /* Stack the boxes vertically on smaller screens */
+        align-items: center; /* Center the boxes */
+    }
+
+    #services .box {
+        width: 100%; /* Each box takes full width on smaller screens */
+        max-width: 100%; /* Limit the maximum width of the box to full width */
+    }
+}
+/* services ends  */
+
+/* Client section  */
+#client-section {
+    height: 300px;
+}
+
+#clients {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    animation: fadeIn 2s ease;
+    /* Apply the fadeIn animation with 1-second duration and ease timing function */
+}
+
+#clients img {
+    height: 90px;
+}
+
+.client-item {
+    padding: 60px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Media query for smaller screens and mobile phones */
+@media only screen and (max-width: 768px) {
+    #clients {
+        flex-direction: column; /* Stack the client items vertically on smaller screens */
+        align-items: center; /* Center the client items */
+    }
+
+    .client-item {
+        max-width: 100%; /* Each client item takes full width on smaller screens */
+    }
+}
+/* client ends  */
+
+/* Contact Section  */
+#contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#contact-box .btn {
+    text-align: center;
+    margin-left: 60px;
+}
+
+.form-control {
+    position: relative;
+    margin: 20px 0 40px;
+    width: 300px;
+}
+
+.form-control input {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px #fff solid;
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 18px;
+    color: #070707;
+}
+
+.form-control input:focus,
+.form-control input:valid {
+    outline: 0;
+    border-bottom-color: rgb(233, 233, 233);
+}
+
+.form-control label {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    pointer-events: none;
+}
+
+.form-control label span {
+    display: inline-block;
+    font-size: 18px;
+    min-width: 5px;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-control input:focus+label span,
+.form-control input:valid+label span {
+    color: rgb(49, 51, 52);
+    transform: translateY(-15px);
+}
+
+/* Media query for smaller screens and mobile phones */
+@media only screen and (max-width: 768px) {
+    #clients {
+        flex-direction: column; /* Stack the client items vertically on smaller screens */
+        align-items: center; /* Center the client items */
+    }
+
+    .client-item {
+        max-width: 100%; /* Each client item takes full width on smaller screens */
+    }
+}
+
+/* contact ends  */
+
+/* utility classes  */
+.h-primary {
+    font-size: 2rem;
+    font-family: 'Labrada', serif;
+    padding: 12px;
+}
+
+.h-secondary {
+    font-size: 1.3rem;
+    font-family: 'Labrada', serif;
+    padding: 12px;
+}
+
+.btn {
+    color: white;
+    background-color: rgb(207, 115, 115);
+    border: 1px solid white;
+    border-radius: 5px 5px;
+    padding: 7px 15px;
+    margin: 22px;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    color: black;
+    background: rgb(208, 200, 200);
+}
+
+.center {
+    text-align: center;
+}
+
+/* CSS for responsive website  */
+
+/* For Tablets  */
+@media screen and (min-width: 768px) and (max-width: 900px) {
+
+
+
+    #home {
+        height: 289px;
+        padding: 138px 215px;
+
+    }
+
+    #home h1 {
+        margin-top: 140px;
+        margin-left: 17px;
+        font-size: 1.8rem;
+    }
+
+    #home p {
+        font-size: 1rem;
+        width: 255px;
+    }
+
+    #home::before {
+        height: 545px;
+
+    }
+
+    #services-container {
+        margin: 0 106px;
+        padding: 0px 5px;
+    }
+
+    #services {
+        flex-direction: column;
+        margin: 0px 21px 41px 21px;
+        padding: 19px 107px;
+    }
+
+    #services .box {
+        box-shadow: 7px 9px 9px #727476;
+        margin: 8px 6px;
+    }
+
+    #clients {
+        flex-wrap: wrap;
+    }
+
+    #clients img {
+        width: 60px;
+        height: auto;
+    }
+
+    .client-item {
+        padding: 40px;
+    }
+
+    #contact-box {
+        padding-bottom: 50px;
+    }
+
+    #contact-box form {
+        width: 50%;
+    }
+
+    #contact-box label {
+        font-size: 1.1rem;
+    }
+
+    #contact-box input {
+        padding: 0.55rem;
+        border-radius: 6px;
+        font-size: 0.85rem;
+    }
+
+    #contact-box button {
+        width: 405px;
+        font-weight: 700;
+    }
+
+    /* Utility Classes */
+    .h-primary {
+        font-size: 1.6rem;
+    }
+
+    .btn {
+        font-size: 1rem;
+        border-radius: 5px 5px;
+        padding: 8px 14px;
+    }
+
+}
+
+/* For Mobile  */
+@media screen and (min-width: 414px)and (max-width:750px) {
+    #navbar {
+        flex-direction: column;
+        height: 100px;
+        box-shadow: 0px 10px 22px rgb(184, 221, 226);
+    }
+
+    #logo img {
+        height: 58px;
+        margin: 3px 4px;
+    }
+
+    #navbar ul li a {
+        font-size: 0.8rem;
+        display: inline-block;
+        white-space: nowrap;
+        margin: 16px;
+
+    }
+
+    #navbar ul li {
+        width: 85px;
+        padding: 0px 5px;
+    }
+
+    #navbar ul {
+        margin: -16px 0px 0px -30px
+    }
+
+    #home {
+        height: 250px;
+        padding: 138px 215px;
+
+    }
+
+    #home h1 {
+        width: 318px;
+        margin-top: 89px;
+        font-size: 1.8rem;
+    }
+
+    #home p {
+        font-size: 1.1rem;
+        width: 260px;
+    }
+
+
+    #home::before {
+        height: 530px;
+
+    }
+
+    #services-container {
+        margin: 0 106px;
+        padding: 0px 5px;
+    }
+
+    #services {
+        flex-direction: column;
+        margin: 0px -54px 13px -49px;
+        padding: 9px 100px;
+    }
+
+    #services .box {
+        padding: 5px;
+        margin: 8px 7px;
+        border-radius: 50px;
+        box-shadow: 7px 9px 9px #727476;
+    }
+
+    #services .box img {
+        height: 120px;
+    }
+
+    #clients {
+        flex-wrap: wrap;
+    }
+
+    #client-section::before {
+        background-size: 1340px 340px;
+
+    }
+
+    .client-item {
+        padding: 48px 50px 0px 41px;
+    }
+
+    #clients img {
+        width: 55px;
+        height: auto;
+    }
+
+    #contact-box {
+        padding-bottom: 50px;
+    }
+
+    #contact-box form {
+        width: 65%;
+    }
+
+    #contact-box label {
+        font-size: 1.1rem;
+    }
+
+    #contact-box input {
+        padding: 0.55rem;
+        border-radius: 6px;
+        font-size: 0.85rem;
+    }
+
+    #contact-box button {
+        width: 293px;
+        font-weight: 600;
+    }
+
+    /* Utility Classes */
+    .h-primary {
+        font-size: 1.6rem;
+        margin-top: 12px;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        font-weight: 600;
+        padding: 9px 22px;
+        border-radius: 5px 5px;
+        display: inline-block;
+        white-space: nowrap;
+    }
+
+}
